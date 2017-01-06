@@ -39,12 +39,16 @@ public class AngeLooperWizard extends Wizard implements INewWizard {
 		File dir = new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toString() + "/" + page.getProjectName());
 		if(dir.mkdir()){
 			File dest = new File(dir.getAbsolutePath() + "/project.zip");
+			MessageDialog.openInformation(null, "Info", "Project dest made");
 			
 			copyProject(dest);
+			MessageDialog.openInformation(null, "Info", "Project Copied");
 			extractAll(dest.getAbsolutePath(), dir.getAbsolutePath());
+			MessageDialog.openInformation(null, "Info", "Project Extracted");
 			dest.delete();
 			
 			importProject(new Path(dir.getAbsolutePath() + "/.project"));
+			MessageDialog.openInformation(null, "Info", "Project Imported");
 		}
 		else{
 			MessageDialog.openError(null, "Error", "Error. A project of that name already exists in the workspace.");
