@@ -10,7 +10,6 @@
       <wizard
             category="AngeLooper"
             class="angelooper.wizards.angelooper.AngeLooperWizard"
-            icon="icons/sample.gif"
             id="angelooper.wizards.angelooper.AngeLooperWizard"
             name="AngeLooper">
       </wizard>
